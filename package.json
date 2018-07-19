@@ -11,8 +11,8 @@
   "scripts": {
     "start": "react-scripts start",
     "clean": "rm -rf functions-build && mkdir functions-build",
-    "zip": "cd functions/one && npm install && zip ../one.zip –r -X *",
-    "move-zip": "mv functions/one.zip functions-build",
+    "zip": "cd functions/one && npm install && zip -r one.zip *",
+    "move-zip": "mv functions/one/one.zip functions-build",
     "move-other-func": "cp functions/other.js functions-build",
     "prebuild": "npm run clean && npm run zip && npm run move-zip && npm run move-other-func",
     "build": "react-scripts build",
