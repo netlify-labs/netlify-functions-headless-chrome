@@ -13,7 +13,8 @@
     "clean": "rm -rf functions-build && mkdir functions-build",
     "zip": "cd functions/one && npm install && zip ../one.zip –r -X *",
     "move-zip": "mv functions/one.zip functions-build",
-    "prebuild": "npm run clean && npm run zip && npm run move-zip",
+    "move-other-func": "cp functions/other.js functions-build",
+    "prebuild": "npm run clean && npm run zip && npm run move-zip && npm run move-other-func",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
