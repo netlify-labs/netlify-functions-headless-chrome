@@ -10,6 +10,7 @@
 # production
 /build
 /functions-build
+.netlify
 
 # misc
 .DS_Store
