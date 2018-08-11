@@ -12,12 +12,10 @@
     "start": "react-scripts start",
     "clean": "rm -rf functions-build && mkdir functions-build",
     "zip": "cd functions/one && npm install && zip -r one.zip *",
-    "move-zip": "mv functions/one/one.zip functions-build",
-    "move-other-func": "cp functions/other.js functions-build",
-    "prebuild": "npm run clean && npm run zip && npm run move-zip && npm run move-other-func",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "postzip": "mv functions/one/one.zip functions-build",
+    "move-other-func": "cp functions/normal-node-8-function.js functions-build",
+    "prebuild": "npm run clean && npm run zip && npm run move-other-func",
+    "build": "react-scripts build"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
