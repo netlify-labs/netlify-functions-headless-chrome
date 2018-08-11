@@ -12,11 +12,11 @@
 
 	Like so: `/functions/one/one.js`
 
-	```bash
-	/functions
-		/one
-			one.js <-- function code
-			package.json <-- function dependencies
+	```
+  /functions
+	  /one
+	    one.js <-- function code
+	    package.json <-- function dependencies
 	```
 
 3. Configure your build directory for functions in netlify.toml
