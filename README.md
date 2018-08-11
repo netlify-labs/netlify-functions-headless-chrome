@@ -12,7 +12,7 @@
 
 	Like so: `/functions/one/one.js`
 
-	```
+	```pseudo
   /functions
 	  /one
 	    one.js <-- function code
