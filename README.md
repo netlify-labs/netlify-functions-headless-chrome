@@ -12,7 +12,7 @@
 
 	Like so: `/functions/one/one.js`
 
-	```pseudo
+	```bash
 	/functions
 		/one
 			one.js <-- function code
