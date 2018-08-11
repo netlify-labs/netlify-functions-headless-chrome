@@ -3,10 +3,36 @@
 
 1. Create a functions folder
 
-2. Create a sub folder with a function and dependancies
+		```
+		mkdir functions
+		```
+
+2. Create a sub folder with a function and a `package.json` file with its dependancies
 
 		The function (right now) needs to have the same name as the folder that contains it.
 
-		`/functions/one/one.js`
+		Like so: `/functions/one/one.js`
 
-3. Zip up the function and dependancies during build and place into the functions publish folder
+		```
+		/functions
+			/one
+				one.js
+				package.json
+		```
+
+3. Configure your build directory for functions in netlify.toml
+
+		```
+		# netlify.toml file
+		[build]
+	  	command = "npm run build"
+	  	publish = "build" # <-- Frontend build dir
+	  	functions = "functions-build" # <-- Functions build dir
+		```
+
+3. During your build, Zip up the function and dependancies and place in functions dist folder `functions-build`
+
+
+## Future Plans
+
+We are working on streamlining the zips based function flow with a single CLI command!
