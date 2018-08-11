@@ -21,13 +21,13 @@
 
 3. Configure your build directory for functions in netlify.toml
 
-		```toml
-		# netlify.toml file
-		[build]
-			command = "npm run build"
-			publish = "build" # <-- Frontend build dir
-			functions = "functions-build" # <-- Functions build dir
-		```
+	```toml
+	# netlify.toml file
+	[build]
+		command = "npm run build"
+		publish = "build" # <-- Frontend build dir
+		functions = "functions-build" # <-- Functions build dir
+	```
 
 4. During your build, Zip up the function and dependancies and place in functions dist folder `functions-build`
 
