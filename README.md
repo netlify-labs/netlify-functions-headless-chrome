@@ -15,8 +15,8 @@
 	```bash
 	/functions
 		/one
-			one.js
-			package.json
+			one.js <-- function code
+			package.json <-- function dependencies
 	```
 
 3. Configure your build directory for functions in netlify.toml
