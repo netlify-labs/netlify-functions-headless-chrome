@@ -7,20 +7,19 @@ exports.handler = async (event, context, callback) => {
   console.log('spawning chrome headless')
   try {
   	const executablePath = await chromium.executablePath
-  	console.log('executablePath', executablePath)
-  	console.log('chromium.args', chromium.args)
-  	console.log('chromium.headless', chromium.headless)
+
+    // setup
     browser = await puppeteer.launch({
       args: chromium.args,
       executablePath: executablePath,
       headless: chromium.headless,
     })
 
-    console.log('browser', browser)
-
-    let page = await browser.newPage()
+    // Do stuff with headless chrome
+    const page = await browser.newPage()
     const targetUrl = 'https://davidwells.io'
 
+    // Goto page and then do stuff
 	  await page.goto(targetUrl, {
 	    waitUntil: ["domcontentloaded", "networkidle0"]
 	  })
@@ -40,7 +39,7 @@ exports.handler = async (event, context, callback) => {
 	    })
 	  })
   } finally {
-  	console.log('finally close', browser)
+    // close browser
     if (browser !== null) {
       await browser.close()
     }
@@ -50,7 +49,6 @@ exports.handler = async (event, context, callback) => {
     statusCode: 200,
     body: JSON.stringify({
       title: theTitle,
-      what: 'hi'
     })
   })
 }
