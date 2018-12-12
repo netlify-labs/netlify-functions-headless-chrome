@@ -4,11 +4,15 @@ const puppeteer = require('puppeteer-core')
 exports.handler = async (event, context, callback) => {
   let theTitle = null
   let browser = null
-  console.log('working')
+  console.log('spawning chrome headless')
   try {
+  	const executablePath = await chromium.executablePath
+  	console.log('executablePath', executablePath)
+  	console.log('chromium.args', chromium.args)
+  	console.log('chromium.headless', chromium.headless)
     browser = await puppeteer.launch({
       args: chromium.args,
-      executablePath: await chromium.executablePath,
+      executablePath: executablePath,
       headless: chromium.headless,
     })
 
