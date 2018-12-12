@@ -15,7 +15,7 @@ exports.handler = async (event, context, callback) => {
   let browser = null
   console.log('spawning chrome headless')
   try {
-  	const executablePath = await chromium.executablePath
+    const executablePath = await chromium.executablePath
 
     // setup
     browser = await puppeteer.launch({
@@ -29,24 +29,24 @@ exports.handler = async (event, context, callback) => {
     const targetUrl = 'https://davidwells.io'
 
     // Goto page and then do stuff
-	  await page.goto(targetUrl, {
-	    waitUntil: ["domcontentloaded", "networkidle0"]
-	  })
+    await page.goto(targetUrl, {
+      waitUntil: ["domcontentloaded", "networkidle0"]
+    })
 
-	  await page.waitForSelector('#phenomic')
+    await page.waitForSelector('#phenomic')
 
-	  theTitle = await page.title();
+    theTitle = await page.title();
 
-	  console.log('done on page', theTitle)
+    console.log('done on page', theTitle)
 
   } catch (error) {
-  	console.log('error', error)
+    console.log('error', error)
     return callback(null, {
-	    statusCode: 500,
-	    body: JSON.stringify({
-	      error: error
-	    })
-	  })
+      statusCode: 500,
+      body: JSON.stringify({
+        error: error
+      })
+    })
   } finally {
     // close browser
     if (browser !== null) {
