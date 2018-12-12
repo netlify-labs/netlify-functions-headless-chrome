@@ -31,7 +31,7 @@ exports.handler = async (event, context, callback) => {
     return callback(null, {
 	    statusCode: 500,
 	    body: JSON.stringify({
-	      title: theTitle
+	      title: error
 	    })
 	  })
   } finally {
@@ -43,7 +43,8 @@ exports.handler = async (event, context, callback) => {
   return callback(null, {
     statusCode: 200,
     body: JSON.stringify({
-      title: theTitle
+      title: theTitle,
+      what: 'hi'
     })
   })
 }
