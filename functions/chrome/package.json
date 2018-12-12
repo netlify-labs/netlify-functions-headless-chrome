@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^4.1.0"
+    "chrome-aws-lambda": "^1.11.1",
+    "puppeteer-core": "^1.11.0"
   }
 }

@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /functions/one/node_modules
+package-lock.json
 
 # testing
 /coverage

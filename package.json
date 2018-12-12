@@ -1,25 +1,22 @@
 {
-  "name": "functions-zip",
+  "name": "headless-chrome-netlify-functions",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "faker": "^4.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "clean": "rm -rf functions-build && mkdir functions-build",
-    "zip": "cd functions/one && npm install && zip -r one.zip *",
-    "postzip": "mv functions/one/one.zip functions-build",
-    "move-other-func": "cp functions/normal-node-8-function.js functions-build",
-    "prebuild": "npm run clean && npm run zip && npm run move-other-func",
+    "prezip": "rm -rf functions-build && mkdir functions-build",
+    "zip": "cd functions/chrome && npm install && zip -r chrome.zip *",
+    "postzip": "mv functions/chrome/chrome.zip functions-build",
+    "prebuild": "npm run zip",
     "build": "react-scripts build"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
