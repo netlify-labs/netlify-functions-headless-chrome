@@ -40,7 +40,7 @@ exports.handler = async (event, context, callback) => {
 	    })
 	  })
   } finally {
-  	console.log('finally close')
+  	console.log('finally close', browser)
     if (browser !== null) {
       await browser.close()
     }

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "prezip": "rm -rf functions-build && mkdir functions-build",
-    "zip": "cd functions/chrome && npm install && zip -r chrome.zip *",
+    "zip": "cd functions/chrome && npm install && chmod -R 777 node_modules && zip -r chrome.zip *",
     "postzip": "mv functions/chrome/chrome.zip functions-build",
     "prebuild": "npm run zip",
     "build": "react-scripts build"
