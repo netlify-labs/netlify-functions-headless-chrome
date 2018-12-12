@@ -12,6 +12,8 @@ exports.handler = async (event, context, callback) => {
       headless: chromium.headless,
     })
 
+    console.log('browser', browser)
+
     let page = await browser.newPage()
     const targetUrl = 'https://davidwells.io'
 
@@ -19,12 +21,11 @@ exports.handler = async (event, context, callback) => {
 	    waitUntil: ["domcontentloaded", "networkidle0"]
 	  })
 
-	  await page.waitForSelector('head')
+	  await page.waitForSelector('#phenomic')
 
-	  theTitle = await page.evaluate(() => {
-	  	var title = document.title
-	    return title
-	  })
+	  theTitle = await page.title();
+
+	  console.log('done on page', theTitle)
 
   } catch (error) {
     return callback(null, {
