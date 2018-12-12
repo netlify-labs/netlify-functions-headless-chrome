@@ -32,13 +32,15 @@ exports.handler = async (event, context, callback) => {
 	  console.log('done on page', theTitle)
 
   } catch (error) {
+  	console.log('error', error)
     return callback(null, {
 	    statusCode: 500,
 	    body: JSON.stringify({
-	      title: error
+	      error: error
 	    })
 	  })
   } finally {
+  	console.log('finally close')
     if (browser !== null) {
       await browser.close()
     }
