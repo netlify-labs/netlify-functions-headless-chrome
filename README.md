@@ -2,10 +2,6 @@
 
 > Run headless chrome in netlify lambda functions
 
-Must have at least 512mb of RAM & above 10 second timeout in function for this to work. 
-
-Please contact Netlify support to update your function configuration.
-
 ## How
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./functions/chrome/chrome.js) -->
