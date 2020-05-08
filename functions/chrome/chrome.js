@@ -1,7 +1,7 @@
 const chromium = require('chrome-aws-lambda')
 const puppeteer = require('puppeteer-core')
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
   let theTitle = null
   let browser = null
   console.log('spawning chrome headless')
@@ -32,12 +32,12 @@ exports.handler = async (event, context, callback) => {
 
   } catch (error) {
     console.log('error', error)
-    return callback(null, {
+    return {
       statusCode: 500,
       body: JSON.stringify({
         error: error
       })
-    })
+    }
   } finally {
     // close browser
     if (browser !== null) {
@@ -45,10 +45,10 @@ exports.handler = async (event, context, callback) => {
     }
   }
 
-  return callback(null, {
+  return {
     statusCode: 200,
     body: JSON.stringify({
       title: theTitle,
     })
-  })
+  }
 }
