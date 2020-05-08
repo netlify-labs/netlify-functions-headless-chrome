@@ -4,6 +4,8 @@
 
 ## How
 
+Add a [Netlify function](https://www.netlify.com/products/functions/) with the following code!
+
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./functions/chrome/chrome.js) -->
 <!-- The below code snippet is automatically added from ./functions/chrome/chrome.js -->
 ```js
