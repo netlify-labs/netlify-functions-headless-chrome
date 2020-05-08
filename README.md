@@ -1,4 +1,4 @@
-# Headless chrome netlify functions
+# Netlify functions + Headless Chrome &nbsp;&nbsp;&nbsp;<a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-labs/netlify-functions-headless-chrome"><img src="https://www.netlify.com/img/deploy/button.svg"></a>
 
 > Run headless chrome in netlify lambda functions
 
